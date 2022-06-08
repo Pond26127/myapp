@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 {/* For Screen */}
 import homeScreeen from './navigation/screens/homeScreeen';
-import userSetteingScreeen from './navigation/screens/userSettingScreen';
+import userSettingScreeen from './navigation/screens/userSettingScreen';
 import finishScreeen from './navigation/screens/finishScreeen';
 
 
@@ -32,9 +32,21 @@ export default function mainContainer(){
                         iconName = focused ? 'list' : 'list-outline'
                     }
 
-                    return 
+                    return <Ionicons name={iconName} size={size} color={color}/>
                 },
-            }) }   >
+            })}
+            tabBarOption={{
+                activeTintColor: 'tomato',
+                inactiveTintColor: 'grey',
+                labelStyle: { paddingBottom: 10, fontSize:10} ,
+                style: {padding: 10 , height: 70}
+            }}
+            >
+
+            <tab.Screen name = {homeName} components={homeScreeen}/>
+            <tab.Screen name = {finishName} components={finishScreeen}/>
+            <tab.Screen name = {settingName} components={userSettingScreeen}/>
+
 
             </tab.Navigator>
 
