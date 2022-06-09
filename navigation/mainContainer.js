@@ -1,13 +1,12 @@
-import * as React from 'react';
-import { View , Text } from 'react-native';
+import * as React from 'react';;
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
-{/* For Screen */}
-import homeScreeen from './navigation/screens/homeScreeen';
-import userSettingScreeen from './navigation/screens/userSettingScreen';
-import finishScreeen from './navigation/screens/finishScreeen';
 
+{/* For Screen */}
+import homeS from './screens/homeScreen';
+import finishScreen from './screens/finishScreen'
+import userSettingScreen from './screens/userSettingScreen'
 
 const homeName = 'Home';
 const settingName = 'Setting';
@@ -25,11 +24,11 @@ export default function mainContainer(){
                     let rn = route.name;
                     
                     if (rn === homeName){
-                        iconName = focused ? 'home' : 'home-outline'
+                        iconName = focused ? 'Home' : 'Home-outline'
                     } else if (rn === settingName){
-                        iconName = focused ? 'setting' : 'setting-outline'
+                        iconName = focused ? 'Setting' : 'Setting-outline'
                     } else if (rn === finishName){
-                        iconName = focused ? 'list' : 'list-outline'
+                        iconName = focused ? 'Finish' : 'list-outline'
                     }
 
                     return <Ionicons name={iconName} size={size} color={color}/>
@@ -43,9 +42,9 @@ export default function mainContainer(){
             }}
             >
 
-            <tab.Screen name = {homeName} components={homeScreeen}/>
-            <tab.Screen name = {finishName} components={finishScreeen}/>
-            <tab.Screen name = {settingName} components={userSettingScreeen}/>
+            <tab.Screen name = {homeName} components={homeS}/>
+            <tab.Screen name = {finishName} components={finishScreen}/>
+            <tab.Screen name = {settingName} components={userSettingScreen}/>
 
 
             </tab.Navigator>
